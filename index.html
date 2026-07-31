@@ -53,6 +53,17 @@
       padding: 20px;
       border-radius: 14px;
       margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .app-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     .app-card h3 {
@@ -104,19 +115,25 @@
     <h2>Our Apps</h2>
 
     <div class="app-card">
-      <h3>THE Workout Tracker</h3>
-      <p>
-        A clean, intuitive fitness companion designed to help you track workouts,
-        monitor progress, and stay motivated with a simple, modern interface.
-      </p>
+      <img src="assets/workout-icon.png" alt="Workout Tracker Icon" />
+      <div>
+        <h3>THE Workout Tracker</h3>
+        <p>
+          A clean, intuitive fitness companion designed to help you track workouts,
+          monitor progress, and stay motivated with a simple, modern interface.
+        </p>
+      </div>
     </div>
 
     <div class="app-card">
-      <h3>Pool Chemistry Assistant</h3>
-      <p>
-        Your personal pool‑care helper. Easily track pH, alkalinity, chlorine levels,
-        and get guidance to keep your water crystal clear.
-      </p>
+      <img src="assets/pool-icon.png" alt="Pool Chemistry Assistant Icon" />
+      <div>
+        <h3>Pool Chemistry Assistant</h3>
+        <p>
+          Your personal pool‑care helper. Easily track pH, alkalinity, chlorine levels,
+          and get guidance to keep your water crystal clear.
+        </p>
+      </div>
     </div>
   </section>
 
