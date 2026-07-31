@@ -6,6 +6,10 @@
   <title>JSG Systems</title>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -13,9 +17,6 @@
       color: #e6e6e6;
       overflow-x: hidden;
     }
-a .app-card:hover {
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.65);
-}
 
     /* Fade-in animation */
     .fade {
@@ -28,12 +29,58 @@ a .app-card:hover {
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Top Navigation Bar */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      background: rgba(10, 15, 40, 0.6);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo img {
+      height: 42px;
+      width: 42px;
+      border-radius: 8px;
+    }
+
+    .nav-logo span {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #7de2ff;
+    }
+
+    .nav-links a {
+      margin-left: 25px;
+      font-size: 1.1rem;
+      color: #e6e6e6;
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: #7de2ff;
+    }
+
     /* Aurora Gradient Hero */
     header {
       background: linear-gradient(135deg, #0a0f2c, #3a1c71, #0f9b8e);
       background-size: 300% 300%;
       animation: aurora 12s ease infinite;
-      padding: 110px 20px 130px;
+      padding: 140px 20px 130px;
       text-align: center;
       color: white;
       position: relative;
@@ -197,48 +244,63 @@ a .app-card:hover {
 
 <body>
 
+  <!-- Navigation -->
+  <nav class="top-nav fade">
+    <div class="nav-logo">
+      <img src="assets/jsg-logo.png" alt="JSG Systems Logo">
+      <span>JSG Systems</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#apps">Apps</a>
+      <a href="#contact">Contact</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
   <header class="fade">
     <h1>JSG Systems</h1>
     <p>Building smart, modern apps that simplify your life.</p>
   </header>
 
-<div class="section fade">
-  <h2>Our Apps</h2>
+  <!-- Apps Section -->
+  <div id="apps" class="section fade">
+    <h2>Our Apps</h2>
 
-  <!-- Workout Tracker Card -->
-  <a href="https://apps.apple.com/us/app/the-workout-tracker-app/id6788370584" target="_blank" style="text-decoration:none; color:inherit;">
-    <div class="app-card">
-      <img src="assets/workout-icon.png" alt="Workout Tracker Icon" />
-      <div>
-        <h3>THE Workout Tracker</h3>
-        <p>A clean, intuitive fitness companion designed to help you track workouts, monitor progress, and stay motivated.</p>
+    <a href="https://apps.apple.com/us/app/the-workout-tracker-app/id6788370584" target="_blank" style="text-decoration:none; color:inherit;">
+      <div class="app-card">
+        <img src="assets/workout-icon.png" alt="Workout Tracker Icon" />
+        <div>
+          <h3>THE Workout Tracker</h3>
+          <p>A clean, intuitive fitness companion designed to help you track workouts, monitor progress, and stay motivated.</p>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
 
-  <!-- Pool Chemistry Assistant Card -->
-  <a href="https://apps.apple.com/us/app/pool-chemistry-assistant/id6787178780" target="_blank" style="text-decoration:none; color:inherit;">
-    <div class="app-card">
-      <img src="assets/pool-icon.png" alt="Pool Chemistry Assistant Icon" />
-      <div>
-        <h3>Pool Chemistry Assistant</h3>
-        <p>Your personal pool‑care helper. Track pH, alkalinity, chlorine levels, and keep your water crystal clear.</p>
+    <a href="https://apps.apple.com/us/app/pool-chemistry-assistant/id6787178780" target="_blank" style="text-decoration:none; color:inherit;">
+      <div class="app-card">
+        <img src="assets/pool-icon.png" alt="Pool Chemistry Assistant Icon" />
+        <div>
+          <h3>Pool Chemistry Assistant</h3>
+          <p>Your personal pool‑care helper. Track pH, alkalinity, chlorine levels, and keep your water crystal clear.</p>
+        </div>
       </div>
-    </div>
-  </a>
-</div>
+    </a>
+  </div>
 
-
-  <div class="contact fade">
+  <!-- Contact -->
+  <div id="contact" class="contact fade">
     <button onclick="window.location.href='mailto:jsgsystems.contact@gmail.com'">
       Contact JSG Systems
     </button>
   </div>
 
+  <!-- Footer -->
   <footer class="fade">
     © 2026 JSG Systems — All Rights Reserved  
     <br /><br />
-    <a href="https://gibsonjs27.github.io/privacy.html">Privacy Policy</a>
+    <a href="privacy.html">Privacy Policy</a>
   </footer>
 
 </body>
