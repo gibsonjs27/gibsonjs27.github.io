@@ -31,20 +31,19 @@
 
     /* Top Navigation Bar */
     .top-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px; /* reduced padding */
-  background: rgba(10, 15, 40, 0.6);
-  backdrop-filter: blur(12px);
-  z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  flex-wrap: wrap; /* allows wrapping if needed */
-}
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 16px;
+      background: rgba(10, 15, 40, 0.6);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
 
     .nav-logo {
       display: flex;
@@ -64,23 +63,73 @@
       color: #7de2ff;
     }
 
+    /* Desktop Links */
     .nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
+      display: flex;
+      gap: 22px;
+    }
 
-.nav-links a {
-  margin-left: 20px; /* slightly reduced spacing */
-  font-size: 1.1rem;
-  color: #e6e6e6;
-  text-decoration: none;
-  transition: color 0.25s;
-}
+    .nav-links a {
+      font-size: 1.1rem;
+      color: #e6e6e6;
+      text-decoration: none;
+      transition: color 0.25s;
+    }
 
-.nav-links a:hover {
-  color: #7de2ff;
-}
+    .nav-links a:hover {
+      color: #7de2ff;
+    }
+
+    /* Mobile Menu Button */
+    .menu-btn {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-btn div {
+      width: 28px;
+      height: 3px;
+      background: #e6e6e6;
+      border-radius: 2px;
+    }
+
+    /* Mobile Dropdown */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(10, 15, 40, 0.9);
+      padding: 20px;
+      position: fixed;
+      top: 70px;
+      right: 0;
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      z-index: 999;
+    }
+
+    .mobile-menu a {
+      padding: 12px 0;
+      font-size: 1.2rem;
+      color: #e6e6e6;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mobile-menu a:hover {
+      color: #7de2ff;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .menu-btn {
+        display: flex;
+      }
+    }
 
     /* Aurora Gradient Hero */
     header {
@@ -263,7 +312,27 @@
       <a href="#contact">Contact</a>
       <a href="privacy.html">Privacy</a>
     </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="#apps" onclick="toggleMenu()">Apps</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+    <a href="privacy.html" onclick="toggleMenu()">Privacy</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
 
   <!-- Hero -->
   <header class="fade">
